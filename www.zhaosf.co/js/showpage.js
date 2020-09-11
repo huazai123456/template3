@@ -1,0 +1,1 @@
+document.writeln('<iframe class="iframe" src=/f9.html align=center frameborder=0 scrolling=no marginwidth="1" marginheight="1" width="100%" height="7000" ></iframe>');

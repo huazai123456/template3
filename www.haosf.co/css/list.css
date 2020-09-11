@@ -1,0 +1,117 @@
+* {
+margin:0;
+padding:0;
+}
+
+body {
+font-size:12px;
+margin:0;
+padding:0;
+}
+
+.wrap {
+width:1002px;
+overflow:hidden;
+margin:0 auto;
+}
+
+.r {
+border-top:none;
+border-style:solid;
+border-width:1px;
+}
+
+.r,.c1,.c2,.c3,.c4,.c5,.c6,.c7 {
+line-height:24px;
+float:left;
+white-space:nowrap;
+overflow:hidden;
+border-right-style:solid;
+border-right-width:1px;
+border-color:#9C0000;
+}
+
+.c3 {
+text-align:center;
+color:red;
+}
+
+.r a {
+text-decoration:none;
+}
+
+.c1 a,.c2 a {
+color:#030303;
+}
+
+.c3 span,.c4 span,.c5 span,.c6 span {
+margin-left:4px;
+}
+
+.c7 a {
+color:#333;
+}
+
+span.jp_gd {
+color:#6200DE;
+font-weight:800;
+}
+
+.lt {
+text-align:center;
+font-weight:bolder;
+color:#FFF;
+background-color:#9B0000;
+}
+
+table.lst-header {
+border-collapse:collapse;
+}
+
+table.lst-header th {
+background:url("../iamges/bar.gif") repeat-x;
+font-weight:800;
+font-size:12px;
+color:#fff;
+border:solid 1px #9C0000;
+height:27px;
+line-height:27px;
+}
+
+.lst_title {
+height:27px;
+background-color:#9C0000;
+border-left:solid 1px #9C0000;
+border-right:solid 1px #9C0000;
+line-height:27px;
+text-align:center;
+color:#fff;
+}
+
+span.red2 {
+color:red;
+margin:0;
+padding:0;
+}
+
+span.green {
+color:#090;
+margin:0;
+padding:0;
+}
+
+span.blue {
+color:#06F;
+margin:0;
+padding:0;
+}
+
+span.pink {
+color:#F0F;
+margin:0;
+padding:0;
+}
+
+.lt .c3,.c7,.c1,.c2,.c4,.c6 {
+text-align:center;
+}

@@ -1,0 +1,127 @@
+*{ 
+	margin:0; 
+	padding:0;
+}
+body{ 
+	margin:0; 
+	padding:0; 
+	font-size:12px; 
+}
+.wrap{ 
+	width:988px; 
+	overflow:hidden; 
+	margin:0 auto; 
+}
+
+
+/*/ 首页列表样式 /*/
+.r{ 
+	border-width:1px; 
+	border-style:solid; 
+	border-top:none; 
+}
+.r, .c1, .c2, .c3, .c4, .c5, .c6, .c7{
+	line-height:24px;
+	float:left;
+	white-space:nowrap;
+	overflow:hidden;
+	border-right-style:solid;
+	border-right-width:1px;
+}
+
+.r, .c1, .c2, .c3, .c4, .c5, .c6, .c7{ 
+	border-color:#9C0000; 
+}
+.c1 a{ 
+	color:#030303; 
+}
+.c2 a{ 
+	color:#030303; 
+}
+.c3{ 
+	text-align:center; 
+	color:#FF0000; 
+}
+.lt .c3{ 
+	text-align:center; 
+}
+.r a{ 
+	text-decoration:none; 
+}
+.c7{ 
+	text-align:center; 
+}
+.c1 a, .c2 a{ 
+	margin-left:4px; 
+}
+.c3 span, .c4 span, .c5 span, .c6 span{ 
+	margin-left:4px; 
+}
+.c7 a{ 
+	color:#333333; 
+}
+.c1, .c2, .c4, .c6{ 
+	text-align:center; 
+}
+
+span.jp_gd{ 
+	color:#6200DE; 
+	font-weight:800; 
+}
+
+/*\ List Title \*/
+.lt{
+	text-align:center;
+	font-weight:bolder;
+	color:#FFFFFF;
+	background-color:#9B0000;
+}
+
+table.lst-header{
+	border-collapse:collapse;
+}
+
+table.lst-header th{ 
+	background:url("../images/bar.gif") repeat-x;
+	font-weight:800;
+	font-size: 12px;
+	color:#ffffff;
+	border:solid 1px #9C0000; 
+	height: 27px;
+	line-height:27px;
+}
+/*/ 首页列表样式 /*/
+
+
+/*/ 官方强烈推荐 明天即将开放游戏 /*/
+.lst_title{	
+	height:27px; 	
+	background-color:#9C0000;	
+	border-left:solid 1px #9C0000; 
+	border-right:solid 1px #9C0000; 
+	line-height:27px; 
+	text-align:center; 
+	color:#ffffff; 
+}
+
+/*  */
+span.red2{ 
+	color:#FF0000;
+	margin:0; 
+	padding:0;  
+}
+span.green{ 
+	color:#009900;
+	margin:0; 
+	padding:0;  
+}
+span.blue{ 
+	color:#0066FF;
+	margin:0; 
+	padding:0;  
+}
+span.pink{ 
+	color:#FF00FF;
+	margin:0; 
+	padding:0;  
+}

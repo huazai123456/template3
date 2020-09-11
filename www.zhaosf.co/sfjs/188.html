@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0034)http://www.zhaosf.co/sfjs/188.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>后台管理员功能，以及数据查询技术，找搜服(zhaosf.co)</title>
+<meta name="Keywords" content="后台管理员功能，以及数据查询技术">
+<meta name="Description" content="后台管理员功能，以及数据查询技术">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<link href="../css/style.css" type="text/css" rel="stylesheet">
+<meta name="Author" content="找搜服(zhaosf.co)">
+<meta name="Generator" content="http://www.zhaosf.co">
+</head>
+<body>
+
+<style type="text/css">
+body {
+    font-size: 12px;
+    background: #fff url("../images/bj.jpg") no-repeat center 0;
+    font-family: "宋体";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #c00;
+}
+
+.bg {
+    background: url("../images/bg1.jpg") no-repeat center 0;
+}
+
+.banner {
+    width: 1000px;
+    margin: 0 auto;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: url("../images/zhaosf.co.gif") no-repeat;
+}
+
+.banner .logo {
+    width: 570px;
+    height: 200px;
+    position: absolute;
+    left: 90px;
+    top: 15px;
+}
+
+.banner .logo a {
+    width: 600px;
+    height: 160px;
+    display: block;
+    position: inherit;
+    text-indent: -9999px;
+}
+
+.banner a {
+    width: 70px;
+    height: 23px;
+    position: absolute;
+    color: #FF0000;
+    text-align: center;
+    line-height: 20px;
+    color: #FF0000;
+    text-indent: -9999px;
+}
+
+.banner a.zhu {
+    right: 168px;
+    top: 17px;
+}
+
+.banner a.faq {
+    right: 28px;
+    top: 17px;
+}
+
+.banner a.index {
+    right: 98px;
+    top: 17px;
+}
+
+.banner .txt {
+    position: absolute;
+    right: 15px;
+    width: 350px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    top: 90px;
+    color: #fff;
+    text-align: right;
+    overflow: hidden;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+.ad {
+    width: 1000px;
+    margin: 0 auto;
+    background: #ff7400;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #ffff98;
+    text-align: center;
+    overflow: hidden;
+    font-family: "宋体";
+}
+
+.sq {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.content table td {
+    text-align: center;
+}
+
+.ad table td {
+    text-align: center;
+}
+
+.footer {
+    background: url("../images/ttbg.gif") no-repeat center 0;
+    width: 1000px;
+    height: 80px;
+    margin: 0px auto;
+    line-height: 71px;
+    color: #ffea86;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.footer a {
+    color: #ffea86;
+}
+</style>
+
+<!-- 面包导航 !--> 
+<style type="text/css">
+<!--
+body,ul,ol,li,dl,dt,dd,h1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    border: none;
+    text-decoration: none;
+}
+
+#menu {
+    width: 990px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border: 6px solid #FF0000;
+}
+
+#menu dl {
+    padding-left: 10px;
+    height: 30px;
+    overflow: hidden;
+}
+
+#menu dl dd {
+    float: left;
+    padding-right: 5px;
+}
+
+#menu dl dd a {
+    display: block;
+    padding-left: 10px;
+    background: url("../images/menu.gif") no-repeat 0 -60px;
+}
+
+#menu dl dd a span {
+    display: block;
+    color: #630;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+    padding-right: 10px;
+    background: url("../images/menu.gif") no-repeat right -60px;
+    overflow: hidden;
+}
+
+#menu dl dd a:hover,
+    #menu dl dd.ok a {
+    background-position: 0 -90px;
+}
+
+#menu dl dd a:hover span,
+    #menu dl dd.ok a span {
+    cursor: pointer;
+    font-weight: bold;
+    color: #FFF;
+    background-position: right -90px;
+}
+
+#menu ol {
+    clear: both;
+    height: 30px;
+    background: url("../images/menu.gif") repeat-x 0 0;
+}
+
+#menu ol li {
+    float: left;
+}
+
+#menu ol li a {
+    color: #FFF;
+    display: block;
+    width: 70px;
+    text-align: center;
+    height: 30px;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+#menu ol li a:hover,
+    #menu ol li.ok a,
+    #menu ol li.ol a {
+    font-weight: bold;
+    background: url("../mages/menu.gif") no-repeat 0 -30px;
+}
+
+#menu ol li span {
+    width: 150px;
+    position: absolute;
+    background-color: #FEFEFE;
+}
+
+#menu ol li span h1 {
+    font: 12px "宋体";
+    float: none;
+    display: block;
+    background-color: #E6E6E6;
+}
+
+#menu ol li span h1 a,
+    #menu ol li.ok span h1 a,
+    #menu ol li.ok span ul a {
+    color: #333;
+    width: 148px;
+    text-indent: 10px;
+    height: 24px;
+    line-height: 26px;
+    text-align: left;
+    font-weight: normal;
+    border-top: #FFF 1px solid;
+    border-bottom: #A0A0A0 1px solid;
+    border-right: #A0A0A0 1px solid;
+    background-image: none;
+}
+
+#menu ol li span h1 a:hover,
+    #menu ol li span h1.ok a {
+    color: #930;
+    font-weight: bold;
+    background-image: none;
+    background-color: #D9D9D9;
+}
+
+#menu ol li.ok span ul {
+    width: 147px;
+    border: #E6E6E6 1px solid;
+    border-top: none;
+    overflow: hidden;
+}
+
+#menu ol li.ok span ul a {
+    border: none;
+}
+
+#menu ol li.ok span ul a:hover {
+    color: #930;
+    font-weight: bold;
+    text-indent: 15px;
+    background-image: none;
+}
+
+.no,.ol span {
+    display: none;
+}
+-->
+</style>
+
+<script>
+function addCookie(){　 // 收藏本站   
+    if (document.all){   
+        window.external.addFavorite('http://www.zhaosf.co', 'zhaosf.co');   
+    }else if (window.sidebar){   
+        window.sidebar.addPanel('zhaosf', 'http://www.zhaosf.co', "");   
+    }   
+}   
+  
+function addCookie2(){   
+    try{   
+        window.external.AddFavorite('http://www.zhaosf.co','zhaosf.co');    
+    }catch(e){   
+        (window.sidebar)?window.sidebar.addPanel('zhaosf.co','http://www.zhaosf.co',''):alert('请使用按键 Ctrl+d，收藏zhaosf.co');    
+    }   
+}   
+  
+function setHomepage(){　 // 设为首页   
+    if (document.all){   
+        document.body.style.behavior = 'url(#default#homepage)';   
+        document.body.setHomePage('http://www.zhaosf.co');   
+    }else if (window.sidebar){   
+        if (window.netscape){   
+            try {   
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
+            }catch (e) {   
+                alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");   
+            }   
+        }   
+        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);   
+        prefs.setCharPref('browser.startup.homepage', 'http://www.zhaosf.co');   
+    }   
+}    
+</script>
+<script language="javascript">
+<!--//
+    function ShowMenu(obj,n){
+        var dd = obj.parentNode.getElementsByTagName("dd");
+        for(var i=0;i<dd.length;i++){
+            dd[i].className = "";
+        }
+        dd[n].className = "ok";
+        var ol = document.getElementById("menu").getElementsByTagName("ol");
+        for(var i=0;i<ol.length;i++){
+            ol[i].className = "no";
+        }
+        ol[n].className = "";
+    }
+    function ShowSpan(obj,n){
+        var span = obj.parentNode.getElementsByTagName("span");
+        for(var i=0;i<span.length;i++){
+            span[i].className = "no";
+        }
+        span[n].className = "";
+        var li = obj.parentNode.getElementsByTagName("li")
+        li[n].className = "ok";
+        for(var i=0;i<li.length;i++){
+            if(i!=n){
+                li[i].className = "";
+            }
+            li[i].onmouseout = function(){
+                this.className = "ol";
+            }
+        }
+    }
+    function ShowUl(obj,n){
+        var ul = obj.parentNode.getElementsByTagName("ul");
+        var h1 = obj.parentNode.getElementsByTagName("h1");
+        for(var i=0; i<h1.length;i++){
+            h1[i].innerHTML = h1[i].innerHTML.replace("-","+");
+            h1[i].className = "";
+        }
+        if(ul[n].className == "no"){
+            ul[n].className = "";
+            obj.className = "ok";
+            obj.innerHTML = obj.innerHTML.replace("+","-");
+        }else{
+            ul[n].className = "no";
+            return;
+        }
+        for(var i=0; i<ul.length;i++){
+            if(i!=n){
+                 ul[i].className = "no";
+            }
+        }
+    }
+//-->
+</script>
+    
+<div id="hzc">
+    <center>
+        <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr align="center" valign="middle">
+                  <td width="30" height="30"><img src="../images/kids.gif" alt="公告" width="15" height="14"></td>
+                  <td align="left">zhaosf.co www.zhaosf.co 找搜服专署于传奇搜服开机信息发布,最新最全的游戏网站!!</td>
+                  <td width="10%"><a style="cursor: hand" onclick="toueme()"><img src="../images/close.gif" alt="关闭" width="84" height="11" hspace="6" border="0"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</div> 
+
+<div align="center">
+    <div class="banner">
+        <div class="logo"><a href="http://www.zhaosf.co/"></a></div>
+        <a class="zhu" href="http://www.zhaosf.co/">网站首页</a>
+        <a class="faq" href="javascript:setHomepage();">设为首页</a>
+        <a class="index" href="javascript:addCookie();">收藏本站</a>
+    </div>
+    <div id="menu">
+        <dl>
+            <dd onmouseover="javascript:ShowMenu(this,0);" class=""><a href="http://www.zhaosf.co/heji/"><span>合击版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,1);" class=""><a href="http://www.zhaosf.co/bt/"><span>变态版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,2);" class=""><a href="http://www.zhaosf.co/fsd/"><span>仿盛大版本</span></a></dd>
+        	<dd onmouseover="javascript:ShowMenu(this,3);" class="ok"><a href="http://www.zhaosf.co/j/"><span>金币版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,4);" class=""><a href="http://www.zhaosf.co/cb/"><span>超变传奇</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,5);" class=""><a href="http://www.zhaosf.co/q/"><span>轻变版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,6);" class=""><a href="http://www.zhaosf.co/z/"><span>中变版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,7);" class=""><a href="http://www.zhaosf.co/1.85/"><span>185版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,8);" class=""><a href="http://www.zhaosf.co/1.96/"><span>196版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,9);" class=""><a href="http://www.zhaosf.co/1.76/"><span>176版本</span></a></dd>
+            <dd onmouseover="javascript:ShowMenu(this,10);" class=""><a href="http://www.zhaosf.co/quanbu/"><span>每日千服</span></a></dd>
+        </dl>
+    </div>
+    <script>
+    (function(){
+       var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?b934ce1eab972e7b6ad270e938bf05db":"https://jspassport.ssl.qhimg.com/11.0.1.js?b934ce1eab972e7b6ad270e938bf05db";
+       document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+    </script>
+    <script src="../js/11.0.1.js" id="sozz"></script>
+    <script charset="utf-8" src="../js/ab77b6ea7f3fbf79.js"></script>
+    <div id="w">
+        <div class="cle"></div>
+        <div id="box_m" class="mar">
+            <div class="page_tit"><b>您的位置：</b><a href="http://www.zhaosf.co/sfjs">技术文章</a></div>
+            <div class="wztitle"><h5>后台管理员功能，以及数据查询技术</h5></div>
+            <div class="wzcom">来源：找搜服(zhaosf.co) [2019/9/14 9:31:24] 作者：123</div>
+            <div class="neirong"><div style=""><span style="font-size: 13.3333px;">[@YYbFs_管理]</span></div><div style=""><span style="font-size: 13.3333px;">{</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#SAY</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[开放赌博]/@kaifang&gt;&nbsp; &nbsp; &nbsp;&lt;[关闭赌博]/@关闭赌博&gt;&nbsp; &nbsp; &nbsp; &lt;[调金刚石]/@@InPutString5&gt;&nbsp; &nbsp; &nbsp;&lt;[取消赞助]/@@InPutString7&gt; \</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[比武开始]/@比武开始&gt;&nbsp; &nbsp; &nbsp;&lt;[比武关闭]/@比武关闭&gt;&nbsp; &nbsp; &nbsp; &lt;[经验开始]/@经验开始&gt;&nbsp; &nbsp; &nbsp;&lt;[经验关闭]/@经验关闭&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[行会开始]/@开始行会&gt;&nbsp; &nbsp; &nbsp;&lt;[行会关闭]/@行会关闭&gt;&nbsp; &nbsp; &nbsp; &lt;[护宝开始]/@护宝开始&gt;&nbsp; &nbsp; &nbsp;&lt;[调整结阵]/@调整结阵&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[初始系统]/@初始系统&gt;&nbsp; &nbsp; &nbsp;&lt;[二级验证]/@开启验证&gt;&nbsp; &nbsp; &nbsp; &lt;[沙城管理]/@沙城管理&gt;&nbsp; &nbsp; &nbsp;&lt;[清理背包]/@jinagh&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">────────────&lt;COLOR=clLime [后台管理]&gt;────────────\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[战神套装]/@LQZB1S&gt;&nbsp; &nbsp; &nbsp;&lt;[圣魔套装]/@LQZB2S&gt;&nbsp; &nbsp; &nbsp; &lt;[真魂套装]/@LQZB3S&gt;&nbsp; &nbsp; &nbsp;&lt;[星王战套]/@LQZB4S&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[星王法套]/@LQZB5S&gt;&nbsp; &nbsp; &nbsp;&lt;[星王道套]/@LQZB6S&gt;&nbsp; &nbsp; &nbsp; &lt;[极品战套]/@LQZB7S&gt;&nbsp; &nbsp; &nbsp;&lt;[极品法套]/@LQZB8S&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;[极品道套]/@LQZB9S&gt;&nbsp; &nbsp; &nbsp;&lt;[至尊战套]/@LQZB10S&gt;&nbsp; &nbsp; &nbsp; &lt;[至尊法套]/@LQZB11S&gt;&nbsp; &nbsp; &nbsp;&lt;[至尊道套]/@LQZB12S&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">─☆→前在线:[&lt;$USERCOUNT&gt;]人─☆→&lt;COLOR=clRed 逐日合击&gt;☆授权于：www.runmang.com\ \</span></div><div style=""><span style="font-size: 13.3333px;">&lt;COLOR=clRed 特别声明：本传奇版本由SONEKEY 内部专用 SoftCms：2014-08-25&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">#elseact</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 CNMDB_YES!!!!</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@护宝开始]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MONGENEX TSDT11 20 22 令牌小偷 1 1 1</span></div><div style=""><span style="font-size: 13.3333px;">MOV A91 无</span></div><div style=""><span style="font-size: 13.3333px;">MOV H93 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【夺宝奇兵】活动开始了，如果你也要参加，请通过【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @开始护宝</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@开始行会]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G87 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动开始了，如果你也要参加，请通过土城的【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @行会开始</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@行会关闭]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G87 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【行会争霸】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @行会结束</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@经验开始]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">Gmexecute 开始提问 @开始经验</span></div><div style=""><span style="font-size: 13.3333px;">MOV G55 1</span></div><div style=""><span style="font-size: 13.3333px;">MOV A54 已开启</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】正式开始，请各位勇士去土城【活动使者】ＮＰＣ进入啦！ 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】正式开始，请各位勇士去土城【活动使者】ＮＰＣ进入啦！ 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】正式开始，请各位勇士去土城【活动使者】ＮＰＣ进入啦！ 251 249 50</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】正式开始，请各位勇士去土城【活动使者】ＮＰＣ进入啦！ 251 249 50</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@经验关闭]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G55 0</span></div><div style=""><span style="font-size: 13.3333px;">MOV A54 未开启</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】已经关闭，下次开放时间敬请关注土城【活动使者】ＮＰＣ说明. 251 249 50</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】已经关闭，下次开放时间敬请关注土城【活动使者】ＮＰＣ说明. 251 249 50</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】已经关闭，下次开放时间敬请关注土城【活动使者】ＮＰＣ说明. 251 249</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验派对】已经关闭，下次开放时间敬请关注土城【活动使者】ＮＰＣ说明. 251 249</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@比武开始]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G89 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动开始了，如果你也要参加，请通过土城【活动使者】ＮＰＣ进入！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @全服开始</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@比武关闭]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G89 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【比武大赛】活动关闭了，如果你也要参加，请下次参与吧！ 249 151 20</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @全服结束</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@初始系统]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\青铜回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\白银回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\黄金回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\钻石回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\皇冠回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\至尊回馈.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\争霸奖励.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\押镖任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\九重七层.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\九重八层.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\九重九层.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\九天时间.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\五倍经验.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\六倍经验.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\货物任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\粮草任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\送信任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\元宝任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\至尊任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\极限任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\真天任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\暴风任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\魔域任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\任务记录\极品任务.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\男战士名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\男法师名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\男道士名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\女战士名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\女法师名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">CLEARNAMELIST ..\QuestDiary\天下第一\女道士名单.txt</span></div><div style=""><span style="font-size: 13.3333px;">mov G53 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G83 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G82 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G81 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G30 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G29 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A26 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A27 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A28 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G28 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A22 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A23 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A24 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G27 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A18 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A19 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A20 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G26 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A14 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A15 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A16 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G25 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A10 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A11 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A12 0</span></div><div style=""><span style="font-size: 13.3333px;">mov G24 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A6 0</span></div><div style=""><span style="font-size: 13.3333px;">mov A7 暂无...</span></div><div style=""><span style="font-size: 13.3333px;">mov A8 0</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@沙城管理]</span></div><div style=""><span style="font-size: 13.3333px;">&nbsp; &nbsp;亲爱的玩家:&lt;$USERNAME&gt;&nbsp; &nbsp;欢迎您光临本站游戏！\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;COLOR=clLime 当前游戏区&gt;:&lt;$SERVERNAME&gt;&nbsp; &lt;COLOR=clFuchsia 官方网站是&gt;:&lt;$WEBSITE&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">─────────────────────────\</span></div><div style=""><span style="font-size: 13.3333px;">【&lt;认定新区沙城/@认定新区&gt;】&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;【&lt;认定老区沙城/@认定老区&gt;】\ \</span></div><div style=""><span style="font-size: 13.3333px;">【&lt;新区沙城元宝/@新区元宝&gt;】&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;【&lt;老区沙城元宝/@老区元宝&gt;】\ \</span></div><div style=""><span style="font-size: 13.3333px;">【&lt;设置自动攻沙/@设置攻沙&gt;】&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;【&lt;取消自动攻沙/@取消攻沙&gt;】\ \</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@取消攻沙]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G90 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【自动攻沙】已经关闭。。</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【自动攻沙】已经关闭。。&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@设置攻沙]</span></div><div style=""><span style="font-size: 13.3333px;">#act</span></div><div style=""><span style="font-size: 13.3333px;">MOV G90 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【自动攻沙】已经开启。。&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【自动攻沙】已经开启。。</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@认定新区]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G85 1</span></div><div style=""><span style="font-size: 13.3333px;">MOV G86 0</span></div><div style=""><span style="font-size: 13.3333px;">MOV H17 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 沙城初始化为新区奖励.....</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@认定老区]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G86 1</span></div><div style=""><span style="font-size: 13.3333px;">MOV G85 0</span></div><div style=""><span style="font-size: 13.3333px;">MOV H18 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 沙城初始化为老区奖励.....</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@新区元宝]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">equal G85 1</span></div><div style=""><span style="font-size: 13.3333px;">checkcastlewar</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝４０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">MOV H17 400000</span></div><div style=""><span style="font-size: 13.3333px;">MOV G88 0</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@老区元宝]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">equal G86 1</span></div><div style=""><span style="font-size: 13.3333px;">checkcastlewar</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【沙巴克】：每日沙城战争奖励的【元宝２０００００颗】已经载入系统完毕！攻城完毕后到皇宫内[荣耀官员]处领取！ 249 254 150</span></div><div style=""><span style="font-size: 13.3333px;">MOV H18 200000</span></div><div style=""><span style="font-size: 13.3333px;">MOV G88 0</span></div><div style=""><span style="font-size: 13.3333px;">break</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@开启验证]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">equal G80 1</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G80 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【密码登陆验证】已经关闭。。 251 249</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【密码登陆验证】已经关闭。。 251 249</span></div><div style=""><span style="font-size: 13.3333px;">#elseact</span></div><div style=""><span style="font-size: 13.3333px;">MOV G80 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【密码登陆验证】已经开启。。 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【密码登陆验证】已经开启。。 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@调整结阵]</span></div><div style=""><span style="font-size: 13.3333px;">&nbsp; &nbsp;亲爱的玩家:&lt;$USERNAME&gt;&nbsp; &nbsp;欢迎您光临本站游戏！\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;COLOR=clLime 当前游戏区&gt;:&lt;$SERVERNAME&gt;&nbsp; &lt;COLOR=clFuchsia 官方网站是&gt;:&lt;$WEBSITE&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">─────────────────────────\</span></div><div style=""><span style="font-size: 13.3333px;">【&lt;直接开经验/@开经验&gt;】&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;【&lt;增加499层数/@增加499&gt;】\ \</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@增加499]</span></div><div style=""><span style="font-size: 13.3333px;">#act</span></div><div style=""><span style="font-size: 13.3333px;">INC G60 499</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【魔法结阵】增加499层，成功。。 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 【魔法结阵】增加499层，成功。。 251 249&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@开经验]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">CHECKLEVELEX &gt; 0</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">mov A72 &lt;$USERNAME&gt;</span></div><div style=""><span style="font-size: 13.3333px;">MOV G54 1</span></div><div style=""><span style="font-size: 13.3333px;">SetScTimer 3 1</span></div><div style=""><span style="font-size: 13.3333px;">MAPMOVE MFJJD</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 开始提问 @魔法结阵开始</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 [系统]【%s】触发魔法结阵，在线玩家点击进入经验魔法结界。可以每秒获得5W经验！ 249 251</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 [系统]【%s】触发魔法结阵，在线玩家点击进入经验魔法结界。可以每秒获得5W经验！ 249 251</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 [系统]【%s】触发魔法结阵，在线玩家点击进入经验魔法结界。可以每秒获得5W经验！ 249 251 10</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 [系统]【%s】触发魔法结阵，在线玩家点击进入经验魔法结界。可以每秒获得5W经验！ 249 251 10</span></div><div style=""><span style="font-size: 13.3333px;">DELAYGOTO 120000 @结阵关闭1</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@结阵关闭1]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G54 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验魔法结界】已经关闭，请期待下次超过1000层再次触发本活动。 251 249 10</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验魔法结界】已经关闭，请期待下次超过1000层再次触发本活动。 251 249 10</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验魔法结界】已经关闭，请期待下次超过1000层再次触发本活动。 251 249</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 【经验魔法结界】已经关闭，请期待下次超过1000层再次触发本活动。 251 249</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@jinagh]</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">GMEXECUTE 清理垃圾 &lt;$USERNAME&gt;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 OK!</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB1S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 战神圣靴</span></div><div style=""><span style="font-size: 13.3333px;">give 战神腰带</span></div><div style=""><span style="font-size: 13.3333px;">give 战神头盔</span></div><div style=""><span style="font-size: 13.3333px;">give 凤天魔甲</span></div><div style=""><span style="font-size: 13.3333px;">give 凰天魔衣</span></div><div style=""><span style="font-size: 13.3333px;">give 开天</span></div><div style=""><span style="font-size: 13.3333px;">give 战神项链</span></div><div style=""><span style="font-size: 13.3333px;">give 战神手镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 战神戒指 2</span></div><div style=""><span style="font-size: 13.3333px;">give 战神勋章</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB2S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔法靴</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔腰带</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔头盔</span></div><div style=""><span style="font-size: 13.3333px;">give 凤天魔甲</span></div><div style=""><span style="font-size: 13.3333px;">give 凰天魔衣</span></div><div style=""><span style="font-size: 13.3333px;">give 镇天</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔项链</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔手镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔戒指 2</span></div><div style=""><span style="font-size: 13.3333px;">give 圣魔勋章</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB3S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂道靴</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂腰带</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂头盔</span></div><div style=""><span style="font-size: 13.3333px;">give 凤天魔甲</span></div><div style=""><span style="font-size: 13.3333px;">give 凰天魔衣</span></div><div style=""><span style="font-size: 13.3333px;">give 玄天</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂项链</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂手镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂戒指 2</span></div><div style=""><span style="font-size: 13.3333px;">give 真魂勋章</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB6S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣甲(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣衣(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王玄剑</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道盔</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道链</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道带</span></div><div style=""><span style="font-size: 13.3333px;">give 星王道靴</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB5S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣甲(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣衣(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王魔剑</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法盔</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法链</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法带</span></div><div style=""><span style="font-size: 13.3333px;">give 星王法靴</span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB4S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣甲(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣衣(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 星王圣剑</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战盔</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战链</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战靴</span></div><div style=""><span style="font-size: 13.3333px;">give 星王战带</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB9S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王玄剑</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道袍(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道袍(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道笠</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道链</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道盔</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道带</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道靴</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB8S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法链</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法盔</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法带</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法靴</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法笠</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王法勋</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王魔剑</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB7S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王圣剑</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王圣甲(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王圣衣(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战勋</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王道章</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战笠</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战链</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战盔</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战带</span></div><div style=""><span style="font-size: 13.3333px;">give 极品星王战靴</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB12S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道扇</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道链</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道盔</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道带</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道靴</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道勋</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王道笠</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB11S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王魔杖</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法链</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法盔</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法带</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法靴</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法勋</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王法笠</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@LQZB10S]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王圣剑</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战戒 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战镯 2</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战链</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战盔</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战带</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战靴</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王圣甲(男)</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王圣衣(女)</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战勋</span></div><div style=""><span style="font-size: 13.3333px;">give 至尊星王战笠</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@关闭赌博]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">EQUAL G10 1</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G10 0</span></div><div style=""><span style="font-size: 13.3333px;">mov H30 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@kaifang]</span></div><div style=""><span style="font-size: 13.3333px;">#IF</span></div><div style=""><span style="font-size: 13.3333px;">EQUAL G10 0</span></div><div style=""><span style="font-size: 13.3333px;">#ACT</span></div><div style=""><span style="font-size: 13.3333px;">MOV G10 1</span></div><div style=""><span style="font-size: 13.3333px;">mov H30 1</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100</span></div><div style=""><span style="font-size: 13.3333px;">BREAK</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@@InPutString7]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">DelayGoto 1 ~InPutString7</span></div><div style=""><span style="font-size: 13.3333px;">[~InPutString7]</span></div><div style=""><span style="font-size: 13.3333px;">#Say</span></div><div style=""><span style="font-size: 13.3333px;">你输入的玩家名字：&lt;$STR(S7)&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;确定取消/@6666&gt; \</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@6666]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [175] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [176] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [177] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [178] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [179] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [180] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [181] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [182] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [183] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [184] 0</span></div><div style=""><span style="font-size: 13.3333px;">&lt;$STR(S7)&gt;.set [185] 0</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 OK!!!!!!!!!!!</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@@InPutString5]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">DelayGoto 1 ~InPutString5</span></div><div style=""><span style="font-size: 13.3333px;">[~InPutString5]</span></div><div style=""><span style="font-size: 13.3333px;">#Say</span></div><div style=""><span style="font-size: 13.3333px;">你输入的玩家名字：&lt;$STR(S5)&gt;\</span></div><div style=""><span style="font-size: 13.3333px;">&lt;减金刚石/@@InPutInteger5&gt;&nbsp; &nbsp; &lt;加金刚石/@@InPutInteger6&gt;\</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@@InPutInteger5]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">DelayGoto 1 ~InPutInteger5</span></div><div style=""><span style="font-size: 13.3333px;">[~InPutInteger5]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">s5.GAMEDIAMOND - &lt;$STR(M5)&gt;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 OK!!!!!!!!!!!</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@@InPutInteger6]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">ISADMIN</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">DelayGoto 1 ~InPutInteger6</span></div><div style=""><span style="font-size: 13.3333px;">[~InPutInteger6]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">s5.GAMEDIAMOND + &lt;$STR(M6)&gt;</span></div><div style=""><span style="font-size: 13.3333px;">SENDMSG 6 OK!!!!!!!!!!!</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">[@IsInFilterList]</span></div><div style=""><span style="font-size: 13.3333px;">#If</span></div><div style=""><span style="font-size: 13.3333px;">CheckLevelEx &gt; 0&nbsp;</span></div><div style=""><span style="font-size: 13.3333px;">#Act</span></div><div style=""><span style="font-size: 13.3333px;">MessageBox 输入数据中包含了非法字符.请重新编辑</span></div><div style=""><span style="font-size: 13.3333px;">Goto @Main</span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;"><br></span></div><div style=""><span style="font-size: 13.3333px;">}</span></div><div style="font-size: 10pt;"><br></div><p>阅读：<script src="./后台管理员功能，以及数据查询技术，找搜服(zhaosf.co)_files/count.asp" language="javascript"></script>次</p><p>文章来源网络：由：<a href="http://www.zhaosf.co/">传奇私服</a>www.zhaosf.co&nbsp;找搜服整理发布！ </p></div>
+            <div class="wzabout">
+                <h4>最新<font color="red"><b>传奇</b></font>相关的内容</h4>
+                <div class="keylist">
+                    <ol>
+                        <li><a href="http://www.zhaosf.co/sfjs/187.html" target="_blank" title="文章标题：游戏问答调查问卷技术
+                        发表时间：2019/9/14
+                        阅读次数：1次">游戏问答调查问卷技术…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/186.html" target="_blank" title="文章标题：基本的热血传奇传送技术
+                        发表时间：2019/9/14
+                        阅读次数：1次">基本的热血传奇传送技术…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/185.html" target="_blank" title="文章标题：装备一键回收脚本
+                        发表时间：2019/9/14
+                        阅读次数：1次">装备一键回收脚本…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/184.html" target="_blank" title="文章标题：至尊星王版本之合成技术
+                        发表时间：2019/9/14
+                        阅读次数：1次">至尊星王版本之合成技术…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/183.html" target="_blank" title="文章标题：传奇之心封号脚本
+                        发表时间：2019/9/14
+                        阅读次数：1次">传奇之心封号脚本…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/182.html" target="_blank" title="文章标题：脚本技术加官封爵I，加官封爵后获得血蓝防魔御加层
+                        发表时间：2019/9/14
+                        阅读次数：1次">脚本技术加官封爵I，加官封爵后获得血蓝防魔御加层…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/181.html" target="_blank" title="文章标题：传奇游戏之禁言管理系统
+                        发表时间：2019/9/14
+                        阅读次数：1次">传奇游戏之禁言管理系统…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/180.html" target="_blank" title="文章标题：传奇私服也能单枪匹马去PK
+                        发表时间：2019/8/14
+                        阅读次数：1次">传奇私服也能单枪匹马去PK…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/179.html" target="_blank" title="文章标题：锻造手札怪物有爆， 凌晨刷新50个
+                        发表时间：2019/8/2
+                        阅读次数：1次">锻造手札怪物有爆， 凌晨刷新50个…</a></li>
+                        <li><a href="http://www.zhaosf.co/sfjs/178.html" target="_blank" title="文章标题：金鳞合击传奇，终极首饰装备。单独区域BOSS有爆
+                        发表时间：2019/8/2
+                        阅读次数：1次">金鳞合击传奇，终极首饰装备。单独区域BOSS有爆…</a></li>
+                    </ol>
+                </div>
+            </div>    
+        </div>
+        <div class="cle"></div>
+    </div>
+    <div id="footer">
+        <dt class="dt01"><a href="http://www.zhaosf.co/" target="_blank"><img src="../images/logo.jpg" title="找私服" border="0"></a></dt>
+        <dt class="dt02">
+            <br>Copyright 2006-2015 www.ZhaoSF.Co (找私服) All Rights Reserved.
+            <script src="../js/z_stat.php" language="JavaScript"></script>
+            <script src="../js/core.php" charset="utf-8" type="text/javascript"></script>
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1252978818" target="_blank" title="站长统计">站长统计</a>
+            . <br>建议使用ie6.0以上版本进行浏览，请使用1024*768分辨率浏览本站以达到最佳视觉效果 特别鸣谢：
+            <br><a href="http://www.zhaosf.co/" target="_blank">zhaosf</a>,
+            <a href="http://www.zhaosf.co/" target="_blank">找私服</a>,
+            <a href="http://www.zhaosf.co/" target="_blank">好私服</a>
+        </dt>   
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+body {
+margin-top:46px;
+}
+
+a,area {
+blr:expression(this.onFocus=this.blur());
+}
+
+:focus {
+outline-style:none;
+}
+
+#dw-site-nav {
+background:url("../images/newtop.png") repeat-x;
+cursor:default;
+height:58px;
+left:0;
+min-width:960px;
+overflow:visible;
+position:fixed;
+top:0;
+width:100%;
+word-wrap:break-word;
+z-index:1001;
+_position:absolute:;
+}
+
+#dw-site-nav .bd {
+line-height:58px;
+height:118px;
+position:relative;
+width:960px;
+margin:0 auto;
+padding:0 5px 0 0;
+}
+
+#dw-site-nav .logo {
+background:none repeat scroll 0 0 transparent;
+float:left;
+height:200px;
+text-indent:-9999em;
+width:auto;
+margin:0;
+padding:0;
+}
+
+#dw-site-nav .logo a {
+background:url("../images/bgs_site_logo.png") no-repeat;
+display:block;
+overflow:hidden;
+width:232px;
+height:105px;
+padding:0;
+}
+
+#dw-site-nav .g-info {
+float:left;
+padding-left:50px;
+}
+
+#g-nav-qh {
+float:left;
+height:18px;
+left:35px;
+line-height:18px;
+overflow:hidden;
+position:relative;
+top:12px;
+width:300px;
+}
+
+#dw-site-nav .nav-link {
+float:left;
+}
+
+#dw-site-nav .s-nav {
+float:left;
+position:relative;
+z-index:1;
+color:#ccc;
+margin:0 3px 0 7px;
+}
+
+#dw-site-nav .s-nav em {
+background:url("../images/bgs_site_nav.png") no-repeat scroll right center transparent;
+padding:0 15px 0 7px;
+}
+
+#dw-site-nav .s-news {
+position:absolute;
+}
+
+#dw-site-nav .s-news li {
+background:url("../images/site-nav-licion.gif") no-repeat scroll 0 center transparent;
+padding-left:10px;
+}
+
+#dw-site-nav .p-info {
+float:right;
+padding-right:6px;
+position:relative;
+z-index:1;
+_margin-top:8px;
+}
+
+#dw-site-nav .p-info a {
+margin:0 6px;
+}
+
+#dw-site-nav .p-info a.login-btn {
+background:url("../images/dl_kong.png") no-repeat;
+color:#FFF;
+cursor:pointer;
+display:inline-block;
+height:24px;
+line-height:24px;
+text-align:center;
+width:38px;
+margin:0 8px 0 6px;
+}
+
+#dw-site-nav .nav-popup {
+left:0;
+position:absolute;
+top:32px;
+display:none;
+}
+
+#dw-site-nav .nav-popup .pop-t {
+background:url("../images/morea.png") no-repeat scroll 0 0 transparent;
+height:11px;
+_overflow:hidden;
+}
+
+#dw-site-nav .nav-popup .pop-ti {
+background:url("../images/morea.png") no-repeat scroll right -32px transparent;
+height:11px;
+margin-left:53px;
+}
+
+#dw-site-nav .nav-popup .pop-tc {
+background:url("../images/morea.png") repeat-x scroll 0 -16px transparent;
+height:11px;
+margin-right:5px;
+}
+
+#dw-site-nav .nav-popup .pop-b {
+background:url("../images/morea.png") no-repeat scroll 0 -12px transparent;
+height:4px;
+_overflow:hidden;
+}
+
+#dw-site-nav .nav-popup .pop-bc {
+background:url("../images/morea.png") repeat-x scroll 0 -28px transparent;
+height:4px;
+margin-right:3px;
+}
+
+#dw-site-nav .nav-popup .pop-bi {
+background:url("../images/morea.png") no-repeat scroll right -44px transparent;
+height:4px;
+margin-left:53px;
+}
+
+#dw-site-nav .nav-popup .pop-m {
+background:#fff;
+border-left:1px solid #888;
+border-right:1px solid #888;
+padding:3px 6px 8px 8px;
+}
+
+#dw-site-nav table {
+border-collapse:collapse;
+}
+
+#dw-site-nav .nav-block h3 {
+background:url("../images/nav_stuff.png") repeat-x scroll 0 0 transparent;
+border-right:1px solid silver;
+color:#333;
+font:bold 12px/32px Arial,ËÎÌו;
+text-align:center;
+white-space:nowrap;
+width:auto;
+margin:0;
+}
+
+#dw-site-nav .nav-block a {
+display:block;
+text-align:center;
+white-space:nowrap;
+border-top:1px solid #f0f0f0;
+line-height:31px;
+height:31px;
+border-right:1px solid #f0f0f0;
+padding:0 15px;
+}
+
+#dw-site-nav .nav-gc {
+background:#f7f7f7;
+}
+
+#dw-site-nav .nav-fst h3,#dw-site-nav .nav-fst a {
+border-left:none;
+}
+
+#dw-site-nav .nav-lat h3,#dw-site-nav .nav-lat a {
+border-right:none;
+}
+
+#dw-site-nav .nav-block img {
+vertical-align:middle;
+_vertical-align:text-bottom;
+_margin-top:3px;
+margin-right:5px;
+}
+
+#dw-site-nav .bd .backtop {
+display:none;
+background:url("../images/backtop.gif") no-repeat scroll 0 0 transparent;
+height:67px;
+position:absolute;
+right:-44px;
+text-indent:-99999em;
+top:323px;
+width:34px;
+}
+
+#dw-site-nav .bd .backtop:hover {
+background:url("../images/backtoph.gif") no-repeat scroll 0 0 transparent;
+}
+
+#dw-site-nav .nav-popup .pop-ti,#dw-site-nav .nav-popup .pop-bi {
+width:380px;
+}
+
+#dw-site-nav a,#dw-site-nav,#dw-site-nav .s-nav em {
+color:#666;
+}
+
+#dw-site-nav .s-news a {
+color:#069;
+white-space:nowrap;
+text-overflow:ellipsis;
+overflow:hidden;
+}
+
+#dw-site-nav .s-news a:hover,#dw-site-nav .nav-block a:hover {
+color:#f60;
+}
+
+#dw-site-nav .p-info span {
+color:#ccc;
+}
